@@ -24,7 +24,7 @@
 }
 
 .navbar ul {
-  background-image: linear-gradient(to right, #0044ff,#002999);
+  background-image: linear-gradient(to right, #2527f4,#111969);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +78,7 @@
 
 
 body{
-  background-image: linear-gradient(to right, #0044ff,#002999);
+  background-image: linear-gradient(to right, #2527f4,#111969);
   background-repeat: repeat;
   background-size: 100%;
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
