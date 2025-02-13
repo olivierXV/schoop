@@ -6,6 +6,12 @@
   height: 100%;
 }
 
+.left .box .fb{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .right .box {
   display: flex;
 }
