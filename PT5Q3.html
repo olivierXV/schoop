@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csign.css">
+    <link rel="stylesheet" href="css/ao.css">
+    <title>Sign In</title>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <div class="errir"><p>Screen Size is too small</p></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"></script> 
+    <div class="navbar">
+        <ul>
+          <div>
+            <li><a><img src="school.png"></a></li>
+            <li class="title"><a>SCHOOP</a></li>
+          </div>
+          <div class="link" style="float: right;">
+            <div class="dropdown">
+              <button class="dropbut">≡</button>
+              <div class="dropdown-content">
+                <a>Grades</a>
+                <a>Activities</a>
+                <a>Schedule</a>
+                <a>School Calendar</a>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    <div class="csign">
+        <div class="boxin">
+            <div class="left-side">
+                <div class="fb-page" data-href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" data-tabs="timeline" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600">DepEd Tayo SHS in San Nicholas III, Bacoor City - Bacoor City</a></blockquote></div>
+            </div>
+            <div class="right-side">
+                <div>
+                    <input type="text" id="fname" name="fname" placeholder="E-Mail or LRN"><br>
+                    <input type="text" id="lname" name="lname" placeholder="Password"><br>
+                    <button onclick="calculateGrade()" type="submit">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateGrade() {
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+
+            if (fname === "" || lname === "") {
+                alert("Please fill in all the fields.");
+                return false; // Prevent form submission
+            } else {
+                window.location = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

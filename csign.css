@@ -1,0 +1,101 @@
+.csign {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.boxin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 5px solid #fff;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-side {
+    border-right: 2px solid #ccc; /* Added border for the vertical line */
+    padding-right: 20px;
+    width: 60%;
+
+}
+
+.right-side {
+    padding-left: 20px;
+    width: 40%;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 80%; /* Reduced width of inputs */
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+button {
+    width: 80%; /* Reduced width of button to match inputs */
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e1e1e1;
+}
+
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+        width: 80%; /* Adjusted width for mobile */
+        max-width: 400px; /* Adjusted maximum width for mobile */
+    }
+
+    .left-side {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .right-side {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
