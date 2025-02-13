@@ -12,7 +12,6 @@
 
 .boxin {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255);
     border: 5px solid #fff;
@@ -35,6 +34,7 @@
 .right-side {
     padding-left: 20px;
     width: 40%;
+    align-items: center;
 }
 
 h1 {
