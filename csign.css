@@ -1,22 +1,20 @@
 .csign {
-    background-color: #eee;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75vh;
+    height: 70vh;
     margin: 0;
     padding: 0;
 }
-
 
 .boxin {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255);
     border: 5px solid #fff;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
