@@ -92,6 +92,7 @@ body{
 
 .body {
   min-height: 75vh;
+  max-height: 75vh;
   width: 100%;
   display: flex;  
   margin: 0;
