@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csign.css">
+    <link rel="stylesheet" href="ao.css">
+    <link rel="icon" href="school.png">
+    <title>Sign In</title>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <div class="errir"><p>Screen Size is too small</p></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"></script> 
+    <div class="navbar">
+        <ul style="background-color: #002999; border: none; ">
+          <div>
+            <li><a><img src="school.png"></a></li>
+            <li class="title" style="color: white;"><a>SCHOOP</a></li>
+          </div>
+        </ul>
+      </div>
+    <div class="csign">
+        <div class="boxin">
+            <div class="left-side">
+                <img src="insot.jpeg" width="500" height="375">
+            </div>
+            <div class="right-side">
+                <div style="justify-content: center;">
+                  <h1 style="padding-bottom: 20px;">Welcome</h1>
+                  <form id="loginForm">
+                    <input type="text" id="userinfo" name="userinfo" placeholder="E-Mail or LRN"><br>
+                    <input type="text" id="password" name="password" placeholder="Password"><br>
+                    <button type="submit">Log in</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+            const userinfo = document.getElementById('userinfo').value;
+            const password = document.getElementById('password').value;
+
+            if (userinfo === "" || password === "") {
+                alert("Please fill in all the fields.");
+                return false;
+            } else {
+                if (userinfo === "admin" && password === "password") {
+                    // Store login status
+                    sessionStorage.setItem("loggedInUser", userinfo);
+
+                    // Redirect to index.html
+                    window.location.href = "index.html";
+                    } else {
+                        alert("Invalid credentials!");
+                    }
+            }
+        
+        });
+
+    </script>
+</body>
+</html>
