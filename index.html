@@ -3,17 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SCHOOP - Testing</title>
+  <title>Home</title>
   <link rel="stylesheet" href="ao.css">
+  <link rel="stylesheet" href="hover.css">
   <link rel="icon" href="school.png">
+  <script src="check.js"></script>
+  <script src="logout.js"></script>
 </head>
 <body>
-  <script>
-    if (!sessionStorage.getItem("loggedInUser")) {
-      window.location.href = "login.html";
-    }
-  </script>
-
   <div id="fb-root"></div>
   <div class="errir"><p>Screen Size is too small</p></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"></script> 
@@ -27,53 +24,34 @@
         <div class="dropdown">
           <button class="dropbut">≡</button>
           <div class="dropdown-content">
-            <a>Grades</a>
-            <a>Activities</a>
-            <a>Schedule</a>
-            <a>School Calendar</a>
+            <a href="dashboard.php">Dashboard</a>
+            <a href="DO_s2024_009.pdf">School Calendar</a>
+            <a href="#" id="logoutdrop">Log out</a>
+
           </div>
         </div>
-          <li><a style="float: right; font-size: large; color: white; text-decoration: none;" href="#" id="logoutLink" >Log out</a></li>
-
+          <li><a style="float: right; font-size: large; color: white;" href="#" id="logoutLink" >Log out</a></li>
       </div>
     </ul>
   </div>
   <div class="body">
     <div class="left">
-      <div class="box">
+      <div class="box" style="border: 5px solid #ffa600;">
         <div class="fb">
-          <div class="box1">
-            <center>
-            <video width="500" autoplay muted loop>
-              <source src="quimay.mp4" type="video/mp4">
-              <source src="video.webm" type="video/webm">
-              Your browser does not support the video tag.
-            </video>
-            <h1>Quimay for Senator #16</h1>
-            </center>
-          </div>
+          <div class="fb-page" data-href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" data-tabs="timeline" data-width="500" data-height="470" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600">DepEd Tayo SHS in San Nicholas III, Bacoor City - Bacoor City</a></blockquote></div>
         </div>
       </div>
     </div>
     <div class="right">
-      <div class="box">
+      <div class="box" style="border: 5px solid #ffa600;">
         <ul>
-          <li><a>Grades</a></li>
-          <li><a>Activities</a></li>
-          <li><a>School Calendar</a></li>
-          <li><a>School Info</a></li>
+          <li><a href="dashboard.php" style="text-decoration: none; color: black;">Dashboard</a></li>
+          <li><a href="calendar.html">School Calendar</a></li>
+          
         </ul>
       </div>
     </div>
   </div>
-
-  <script>
-    document.getElementById("logoutLink").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        sessionStorage.removeItem("loggedInUser"); // Remove login session
-        window.location.href = "login.html"; // Redirect to login page
-    });
-  </script>
 </body>
 
 </html>

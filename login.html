@@ -19,47 +19,62 @@
             <li class="title" style="color: white;"><a>SCHOOP</a></li>
           </div>
         </ul>
-      </div>
+    </div>
+    
     <div class="csign">
         <div class="boxin">
-            <div class="left-side">
-                <img src="insot.jpeg" width="500" height="375">
-            </div>
-            <div class="right-side">
+            <div class="right-side" style="padding: 20px;">
                 <div style="justify-content: center;">
                   <h1 style="padding-bottom: 20px;">Welcome</h1>
                   <form id="loginForm">
-                    <input type="text" id="userinfo" name="userinfo" placeholder="E-Mail or LRN"><br>
-                    <input type="text" id="password" name="password" placeholder="Password"><br>
+                    <input type="text" id="userinfo" name="userinfo" placeholder="E-Mail or LRN" required><br>
+                    <input type="password" id="password" name="password" placeholder="Password" required><br>
                     <button type="submit">Log in</button>
                   </form>
+                  <p id="loginError" style="color: red;"></p> <!-- Error message placeholder -->
                 </div>
             </div>
         </div>
     </div>
+
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-            const userinfo = document.getElementById('userinfo').value;
-            const password = document.getElementById('password').value;
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-            if (userinfo === "" || password === "") {
-                alert("Please fill in all the fields.");
-                return false;
-            } else {
-                if (userinfo === "admin" && password === "password") {
-                    // Store login status
-                    sessionStorage.setItem("loggedInUser", userinfo);
+    const userinfo = document.getElementById("userinfo").value;
+    const password = document.getElementById("password").value;
+    const loginError = document.getElementById("loginError");
 
-                    // Redirect to index.html
-                    window.location.href = "index.html";
-                    } else {
-                        alert("Invalid credentials!");
-                    }
-            }
-        
-        });
+    fetch("login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `userinfo=${encodeURIComponent(userinfo)}&password=${encodeURIComponent(password)}`,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text(); // Get the response as text first
+    })
+    .then(text => {
+        try {
+            return JSON.parse(text); // Try to parse as JSON
+        } catch (error) {
+            throw new Error("Invalid JSON: " + text);
+        }
+    })
+    .then(data => {
+        if (data.success) {
+            window.location.href = "index.html"; // Redirect on successful login
+        } else {
+            loginError.textContent = data.message; // Show error message
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        loginError.textContent = "An error occurred. Please try again.";
+    });
+});
 
     </script>
 </body>

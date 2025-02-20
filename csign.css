@@ -13,14 +13,16 @@
 .boxin {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: rgb(255, 255, 255);
     border: 5px solid #ffa600;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
     padding: 20px;
     width: 100%;
-    max-width: 900px;
+    height: 100%;
+    max-width: 700px;
+    max-height: 350px;
     margin: auto;
     transition: transform 0.3s ease-in-out;
 }
@@ -32,10 +34,6 @@
 
 }
 
-.right-side {
-    padding-left: 20px;
-    width: 40%;
-}
 
 h1 {
     margin: 0;
@@ -45,7 +43,7 @@ h1 {
 
 input[type="text"], input[type="password"], textarea {
     width: 80%; /* Reduced width of inputs */
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 10px;
     display: inline-block;
     border: 1px solid #ccc;
@@ -53,9 +51,6 @@ input[type="text"], input[type="password"], textarea {
     box-sizing: border-box;
 }
 
-input[type="radio"], input[type="checkbox"] {
-    margin-right: 10px;
-}
 
 label {
     margin-bottom: 5px;
@@ -78,10 +73,9 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .box {
-        flex-direction: column;
-        width: 80%; /* Adjusted width for mobile */
-        max-width: 400px; /* Adjusted maximum width for mobile */
+    .boxin {
+        width:70%; /* Adjusted width for mobile */
+        max-width: 700px; /* Adjusted maximum width for mobile */
     }
 
     .left-side {
@@ -94,6 +88,21 @@ button:hover {
     .right-side {
         padding-left: 0;
         padding-top: 20px;
+        width: 100%;
+    }
+
+    input[type="text"], input[type="password"], textarea {
+        width: 100%; /* Reduced width of inputs */
+    }
+
+    button {
+        width: 100%;
     }
 }
-
+@media (min-width: 769px) {
+.right-side {
+    padding-left: 20px;
+    margin-left: 10%;
+    width: 50%;
+}
+}

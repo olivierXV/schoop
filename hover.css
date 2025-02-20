@@ -1,0 +1,10 @@
+.navbar .link li a:hover {
+    transition: ease-in-out 0.2s;
+    background-color: #00000033;
+    border-radius: 10px;
+}
+
+.right li a:hover {
+  transition: ease-in-out 0.2s;
+  background-color: #ddd;
+}

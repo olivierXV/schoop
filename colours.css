@@ -1,0 +1,24 @@
+.navbar ul.ICT{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle,#666666, #999999) !important;
+}
+.navbar ul.HUMSS{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle,#18cf00, #129700) !important;
+}
+.navbar ul.HE{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle,#cf0000, #970000) !important;
+}
+.navbar ul.GAS{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle,#0030cf, #003097) !important;
+}   
+.navbar ul.admin{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle, #ffa600,#aa6f00) !important;
+}
+.navbar ul.teacher{
+    border-bottom: 5px solid #ffa600;
+    background-image: radial-gradient(circle, #ffa600,#aa6f00) !important;
+}
