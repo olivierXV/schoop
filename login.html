@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ao.css">
+    <link rel="stylesheet" href="csign.css">
+    <link rel="icon" href="school.png">
+    <title>Sign In</title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <div class="errir"><p>Screen Size is too small</p></div>
+
+    <div class="navbar">
+        <ul>
+            <div>
+                <li><a href="about.html"><img src="school.png" alt="School Logo"></a></li>
+                <li class="title" style="color: white; text-align: left;">
+                    <a style="font-weight: bolder; font-size: xx-large;">SCHOOP</a>
+                    <a style="padding:0;margin:0; font-size: large;">SHSSN3 School Portal</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="csign">
+        <div class="boxin">
+            <div class="right-side" style="padding: 20px;">
+                <div style="justify-content: center;">
+                    <h1 style="padding-bottom: 20px;">Welcome</h1>
+                    <form id="loginForm">
+                        <input type="text" id="userinfo" name="userinfo" placeholder="E-Mail or LRN" required><br>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                        <button type="submit">Log in</button>
+                    </form>
+                    <p>Best viewed using Chromium</p>
+                    <p id="loginError" style="color: red;"></p> <!-- Error message placeholder -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const userinfo = document.getElementById("userinfo").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const loginError = document.getElementById("loginError");
+
+    if (!userinfo) {
+        loginError.textContent = "Please enter your email or LRN.";
+        return;
+    }
+
+    fetch("login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `userinfo=${encodeURIComponent(userinfo)}&password=${encodeURIComponent(password)}`,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = "index.html";  // Redirect on successful login
+        } else if (data.redirect) {
+            window.location.href = data.redirect;  // Redirect to setpassword.html if needed
+        } else {
+            loginError.textContent = data.message;  // Display error message
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        loginError.textContent = "An error occurred. Please try again.";
+    });
+});
+
+    </script>
+
+</body>
+
+</html>

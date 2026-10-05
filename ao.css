@@ -1,0 +1,259 @@
+.box {
+  border: 5px solid #ffa600;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.box table, th, td {
+  border: 2px solid;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+th{
+  width: 100%;
+}
+
+.right .box .fb{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.left .box {
+  flex-direction: column;
+}
+
+.navbar {
+  align-items: center;
+  padding: 2px;
+  margin: 0;
+  height: 80px;
+  text-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+.navbar li img {
+  height: 45px;
+  border-radius: 50%;
+  vertical-align: middle;
+  box-shadow: 0 0px 10px #000;
+}
+
+.navbar ul {
+  background-image: linear-gradient(to right, #2529f4,#111869);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .link {
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  float: left;
+  align-items: center;
+  padding: 0;
+  color: white;
+}
+
+.navbar li p {
+  display: block;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar .link li a {
+  padding: auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar li.title a {
+  font-size: xx-large;
+  display: block;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+
+body{
+  background-image: linear-gradient(to right, #2527f4,#111969);
+  background-repeat: repeat;
+  background-size: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Cantarell, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.body {
+  min-height: 75vh;
+  max-height: 75vh;
+  width: 100%;
+  display: flex;  
+  margin: 0;
+  padding: 0;
+} 
+
+.errir {
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+  #logoutLink {
+    display: none !important;
+  }
+
+  .home{
+    display: none !important;
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  min-height: 75vh;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  padding-top: 40px; /* Adjust this value to match the navbar height */
+}
+
+  .right{
+    width: 95%;
+    padding: 0;
+  }
+
+  .left {
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    font-size: large;
+    padding: 15px;
+    margin-top: -60px;
+  }
+
+  ul {
+    font-size: large;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  li{
+    padding-bottom: 13px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+  }
+
+  .boxon{
+    flex-direction: column;
+  }
+
+  .navbar .title {
+    margin: 0 auto; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 90px; /* Same height as the navbar */
+  }
+}
+@media (min-width: 769px){
+  
+  .dropdown {
+    display: none;
+  }
+  
+  .left {
+    width: 25%; 
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 9px;
+  }
+
+  ul {
+    font-size: x-large;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .left-side {
+      padding-right: 20px;
+  }
+
+  .right-side {
+      padding-left: 20px;
+  }
+
+  #lrn {
+    font-size: large;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  #full-section {
+    font-size: large;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  #announcements {
+    font-size: large;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  li{
+    padding-bottom: 5px;
+  }
+  
+  .right {
+    width: 75%;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  
+  .left, .right {
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 383px) {
+  .body{
+    display: none;
+  }
+  .navbar{
+    display: none;
+  }
+  .errir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+  }
+}

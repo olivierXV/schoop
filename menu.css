@@ -1,0 +1,48 @@
+
+
+.nav-container {
+    position: relative;
+    display: inline-block;
+}
+
+#toggleBtn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Show the menu when active */
+.menu.active {
+    transform: translateX(0);
+}

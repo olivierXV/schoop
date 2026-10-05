@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="stylesheet" href="ao.css">
+  <link rel="stylesheet" href="hover.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="icon" href="school.png">  <script src="backend/dashfetch.js" defer></script>
+  <script src="js/calendar.js" defer></script>
+  <script src="backend/check.js" defer></script>
+  <script src="backend/info.js" defer></script>
+  <script src="backend/logout.js" defer></script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <div class="errir"><p>Screen Size is too small</p></div>
+  <div class="navbar">
+    <ul>
+      <div style="display: flex;">
+        <li><a href="about.html"><img src="school.png"></a></li>
+        <li class="title"><a>SCHOOP</a></li>
+      </div>
+      <div class="link" style="float: right;">
+        <div class="dropdown">
+          <button class="dropbut">≡</button>
+          <div class="dropdown-content">
+            <a href="dashboard.php" id="dash">Dashboard</a>
+            <a href="#" id="logoutdrop">Log out</a>
+          </div>
+        </div>
+        <li><a style="float: right; font-size: large; color: white;" class="active" href="index.html" >Home</a></li>
+        <li><a style="float: right; font-size: large; color: white;" href="dashboard.php" >Dashboard</a></li>
+        <li><a style="float: right; font-size: large; color: white;" href="#" id="logoutLink" >Log out</a></li>
+      </div>
+    </ul>
+  </div>
+  <div class="body">
+    <div class="left">
+      <div class="box">
+        <ul>
+          <ul>
+            <li><a id="full-name"> </a></li>
+            <li><a id="lrn"> </a></li>
+            <li><a id="full-section"> </a></li>
+        <hr style="color: #000000; background-color: #000000; height: 1px; width:100%;">
+            <li><a id="announcements"> </a></li>
+        </ul>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box">
+        <div class="fb">
+          <div class="calendar">
+              <div class="header">
+                  <button id="prevMonth">❮</button>
+                  <h2 id="monthYear"></h2>
+                  <button id="nextMonth">❯</button>
+              </div>
+              <div class="weekdays">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+              </div>
+              <div class="days" id="calendarDays"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!--olicierrv, quippay-->

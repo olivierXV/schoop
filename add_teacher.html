@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Teacher - Admin Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 15px; cursor: pointer; }
+        .message { margin-top: 20px; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a style="float: right; font-size: large; color: white;" href="#" onclick="history.back()">
+        <h2>Add Teacher (Admin Only)</h2>
+        </a>
+        <form id="addTeacherForm">
+            <label for="TeacherID">Teacher ID (7 Characters):</label>
+            <input type="text" id="TeacherID" name="TeacherID" maxlength="7" required>
+
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" name="FirstName" required>
+
+            <label for="MiddleName">Middle Name (Optional):</label>
+            <input type="text" id="MiddleName" name="MiddleName">
+
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" name="LastName" required>
+
+            <label for="Email">Email Address:</label>
+            <input type="email" id="Email" name="Email" required>
+
+            <label for="Role">Role:</label>
+            <select id="Role" name="Role">
+                <option value="teacher" selected>Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button type="submit">Add Teacher</button>
+        </form>
+
+        <p id="message" class="message"></p>
+
+        <h3>Existing Teachers</h3>
+        <table id="teachersTable">
+            <thead>
+                <tr>
+                    <th>Teacher ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('addTeacherForm');
+        const message = document.getElementById('message');
+        const teachersTable = document.getElementById('teachersTable').querySelector('tbody');
+
+        const basePath = window.location.pathname.includes('/dashboard/') ? '../backend/' : 'backend/';
+
+        // Fetch and display teachers
+        async function fetchTeachers() {
+            try {
+                const response = await fetch(`${basePath}teachers.php`);
+                const data = await response.json();
+                teachersTable.innerHTML = data.teachers.map(teacher => `
+                    <tr>
+                        <td>${teacher.TeacherID}</td>
+                        <td>${teacher.FirstName} ${teacher.MiddleName || ''} ${teacher.LastName}</td>
+                        <td>${teacher.Email}</td>
+                        <td>${teacher.Role}</td>
+                        <td>${teacher.created_at}</td>
+                    </tr>
+                `).join('');
+            } catch (error) {
+                console.error('Error fetching teachers:', error);
+            }
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch(`${basePath}teachers.php`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                message.textContent = result.success || result.error;
+                if (result.success) {
+                    form.reset();
+                    fetchTeachers();
+                }
+            } catch (error) {
+                message.textContent = 'Error adding teacher.';
+                console.error('Error:', error);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', fetchTeachers);
+    </script>
+</body>
+
+</html>
